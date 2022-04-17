@@ -2,6 +2,7 @@
     <header class="header-newgame">
         <nav>
             <button type="button" @click="goBack"><fa icon="arrow-left"/></button>
+            
         </nav>
     </header>
     <div>
