@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Jua&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::-moz-selection {
+  background: transparent;
+}
+
+::selection {
+  background: transparent;
+}
+
+@media only screen and (max-width: 420px) {
+  body main .section-app-purple-theme {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(35%, #202292), to(#fd3f7e));
+    background: linear-gradient(to bottom, #202292 35%, #fd3f7e);
+    height: 100vh;
+    width: 100vw;
+  }
+  body main .section-app-purple-theme .x1, body main .section-app-purple-theme .x2, body main .section-app-purple-theme .x3, body main .section-app-purple-theme .o1, body main .section-app-purple-theme .o2, body main .section-app-purple-theme .o3, body main .section-app-purple-theme .o4 {
+    position: absolute;
+    font-family: 'Jua' !important;
+    font-weight: bolder;
+    -webkit-transform: scaleY(0.7);
+            transform: scaleY(0.7);
+  }
+  body main .section-app-purple-theme .x1, body main .section-app-purple-theme .x2, body main .section-app-purple-theme .x3 {
+    color: transparent;
+    text-shadow: 0 0 8px #f344a4, 2px 2px 10px rgba(52, 14, 35, 0.838);
+  }
+  body main .section-app-purple-theme .x1 {
+    top: 0%;
+    left: 10%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 6em;
+    -webkit-animation: rotateMark 70s infinite 0s forwards;
+            animation: rotateMark 70s infinite 0s forwards;
+  }
+  body main .section-app-purple-theme .x2 {
+    top: 20%;
+    right: 10%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 9em;
+    -webkit-animation: rotateMark 90s infinite 0s forwards;
+            animation: rotateMark 90s infinite 0s forwards;
+  }
+  body main .section-app-purple-theme .x3 {
+    bottom: 0%;
+    left: 5%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 5em;
+    -webkit-animation: rotateMark 50s infinite 0s forwards;
+            animation: rotateMark 50s infinite 0s forwards;
+  }
+  body main .section-app-purple-theme .o1, body main .section-app-purple-theme .o2, body main .section-app-purple-theme .o3, body main .section-app-purple-theme .o4 {
+    position: absolute;
+    color: transparent;
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+    text-shadow: 0 0 8px rgba(90, 223, 246, 0.6), 2px 2px 10px rgba(18, 18, 18, 0.6);
+  }
+  body main .section-app-purple-theme .o1 {
+    top: 0%;
+    right: 10%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 4em;
+    -webkit-animation: rotateMark 50s infinite 0s forwards;
+            animation: rotateMark 50s infinite 0s forwards;
+  }
+  body main .section-app-purple-theme .o2 {
+    top: 35%;
+    left: 10%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 6em;
+    -webkit-animation: rotateMark 50s infinite 0s forwards;
+            animation: rotateMark 50s infinite 0s forwards;
+  }
+  body main .section-app-purple-theme .o3 {
+    top: 50%;
+    left: 40%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 10em;
+    -webkit-animation: rotateMark 50s infinite 0s forwards;
+            animation: rotateMark 50s infinite 0s forwards;
+  }
+  body main .section-app-purple-theme .o4 {
+    bottom: 0%;
+    right: 5%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 5em;
+    -webkit-animation: rotateMark 50s infinite 0s forwards;
+            animation: rotateMark 50s infinite 0s forwards;
+  }
+  body main .section-app-purple-theme .display-router {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  @-webkit-keyframes rotateMark {
+    0% {
+      -webkit-transform: rotate(0deg) scaleY(0.8);
+              transform: rotate(0deg) scaleY(0.8);
+    }
+    100% {
+      -webkit-transform: rotate(1440deg) scaleY(0.8);
+              transform: rotate(1440deg) scaleY(0.8);
+    }
+  }
+  @keyframes rotateMark {
+    0% {
+      -webkit-transform: rotate(0deg) scaleY(0.8);
+              transform: rotate(0deg) scaleY(0.8);
+    }
+    100% {
+      -webkit-transform: rotate(1440deg) scaleY(0.8);
+              transform: rotate(1440deg) scaleY(0.8);
+    }
+  }
+}
+/*# sourceMappingURL=background.css.map */
