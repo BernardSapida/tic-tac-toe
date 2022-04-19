@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Jua&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 420px) {
+  body main .section-app-purple-theme .display-router .header-multiplayer {
+    max-height: 44px;
+    width: 100vw;
+    padding: 8px 15px;
+    background-color: #16176f;
+    -webkit-animation: redirect 350ms forwards;
+            animation: redirect 350ms forwards;
+  }
+  body main .section-app-purple-theme .display-router .header-multiplayer nav button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 28px;
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form {
+    height: 85%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-animation: redirect 1000ms forwards;
+            animation: redirect 1000ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form {
+    max-width: 340px;
+    width: 90%;
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form h1.title-multiplayer {
+    margin: 30px 0;
+    text-align: center;
+    font-family: 'Inter' !important;
+    font-weight: bolder;
+    font-size: 34px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 20, 0.6);
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form h1.title-multiplayer span {
+    font-family: 'Inter' !important;
+    color: #fd3fa8;
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form > label {
+    color: white;
+    font-size: 16px;
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form > label p {
+    padding-left: 30px;
+    text-shadow: 2px 2px 5px #000014;
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form > label input[type="text"] {
+    margin: 0 auto 15px;
+    padding: 12px 12px;
+    display: block;
+    max-width: 260px;
+    width: 95%;
+    text-align: left;
+    border-radius: 3px;
+    font-family: 'Inter' !important;
+    font-size: 14px;
+    border: none;
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 20, 0.6);
+            box-shadow: 2px 2px 5px rgba(0, 0, 20, 0.6);
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form div.container-mark {
+    margin: auto;
+    max-width: 260px;
+    width: 95%;
+    background: white;
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 20, 0.6);
+            box-shadow: 2px 2px 5px rgba(0, 0, 20, 0.6);
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form div.container-mark p {
+    padding: 5px 0;
+    font-size: 9px;
+    text-align: center;
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form div.container-mark div {
+    margin: auto;
+    padding: 3px 3px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 90%;
+    background: #fd3fa8;
+    border-radius: 3px;
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form div.container-mark div label {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: center;
+    color: white;
+    line-height: .8;
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form div.container-mark div label input[type="radio"] {
+    display: none;
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form div.container-mark div label input[type="radio"]:checked + div.playerMark {
+    height: 100%;
+    width: 100%;
+    color: #fd3fa8;
+    background: white;
+    -webkit-transition: 350ms cubic-bezier(0.52, -0.54, 0.29, 1.49);
+    transition: 350ms cubic-bezier(0.52, -0.54, 0.29, 1.49);
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form button {
+    display: block;
+    padding: 12px 12px;
+    margin: 15px auto;
+    max-width: 260px;
+    width: 95%;
+    background: #ffc31f;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    font-size: 20px;
+    border: none;
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 20, 0.6);
+            box-shadow: 2px 2px 5px rgba(0, 0, 20, 0.6);
+  }
+  body main .section-app-purple-theme .display-router section.section-multiplayer-form form button:hover {
+    background: #ebac00;
+  }
+}
+
+@-webkit-keyframes redirect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes redirect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=multiplayer.css.map */

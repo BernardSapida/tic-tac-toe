@@ -1,0 +1,713 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Jua&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 420px) {
+  body main .section-app-purple-theme .display-router .header-singleplayer {
+    max-height: 44px;
+    width: 100vw;
+    padding: 6px 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #16176f;
+    -webkit-animation: redirect 350ms forwards;
+            animation: redirect 350ms forwards;
+  }
+  body main .section-app-purple-theme .display-router .header-singleplayer button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+  }
+  body main .section-app-purple-theme .display-router .header-singleplayer div {
+    max-height: 31px;
+    padding: 4px 10px;
+    background: #232690;
+    border-radius: 3px;
+  }
+  body main .section-app-purple-theme .display-router .header-singleplayer div p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: white;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  body main .section-app-purple-theme .display-router .header-singleplayer div p span {
+    line-height: 0;
+    margin-right: 5px;
+    font-size: 20px;
+    color: #FFC11D;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    margin-inline: auto;
+    height: 90%;
+    max-width: 340px;
+    width: 90%;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile {
+    margin-inline: auto;
+    height: 120px;
+    max-width: 280px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-time {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    position: relative;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-time-primary {
+    margin: 5px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background: #ffc31f;
+    -webkit-box-shadow: 0 0 10px rgba(255, 195, 31, 0.7);
+            box-shadow: 0 0 10px rgba(255, 195, 31, 0.7);
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-time-primary div {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    background: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-time-primary div p {
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffc31f;
+    line-height: 1.5;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-time-primary div p span {
+    font-size: 13px;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-time-label {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    max-width: 42px;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    padding: 5px 5px;
+    background: #ffc31f;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 10px rgba(255, 195, 31, 0.7);
+            box-shadow: 0 0 10px rgba(255, 195, 31, 0.7);
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-time-label p {
+    text-align: center;
+    font-size: 8px;
+    color: white;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-you, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-bot {
+    position: relative;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bolder;
+    color: white;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-you div, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-bot div {
+    margin: 5px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-you div div, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-bot div div {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    background: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    line-height: 0;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-you p:last-child, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-bot p:last-child {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-you div {
+    background: #fd3fa8;
+    -webkit-box-shadow: 0 0 10px rgba(253, 63, 168, 0.7);
+            box-shadow: 0 0 10px rgba(253, 63, 168, 0.7);
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-you div div {
+    font-size: 40px;
+    color: #fd3fa8;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-bot div {
+    background: #5adff6;
+    -webkit-box-shadow: 0 0 10px rgba(90, 223, 246, 0.7);
+            box-shadow: 0 0 10px rgba(90, 223, 246, 0.7);
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile .profile-bot div div {
+    font-size: 30px;
+    color: #5adff6;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score {
+    margin-inline: auto;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board {
+    margin-top: 20px;
+    height: 220px;
+    width: 220px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    overflow: hidden;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div {
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    height: 65px;
+    width: 65px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-x {
+    position: absolute;
+    height: 65px;
+    width: 65px;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-x::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-x::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 45px;
+    width: 13px;
+    background: #fd3fa8;
+    border-radius: 3px;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-x::before {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg);
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-x::after {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-o {
+    position: absolute;
+    height: 65px;
+    width: 65px;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-o::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 0px 13px #5adff6, 4px 4px 4px 13px rgba(0, 0, 0, 0.5), -4px -4px 4px 13px rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 0px 0px 13px #5adff6, 4px 4px 4px 13px rgba(0, 0, 0, 0.5), -4px -4px 4px 13px rgba(255, 255, 255, 0.5);
+    z-index: 1;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-o::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    background: linear-gradient(-45deg, transparent 40%, rgba(0, 0, 0, 0.5));
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-o::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-o::after {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .mark-x {
+    -webkit-animation: displayMark 350ms forwards;
+            animation: displayMark 350ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .mark-o {
+    -webkit-animation: displayMark 350ms forwards;
+            animation: displayMark 350ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line {
+    display: none;
+    -webkit-animation: verticalLine 350ms forwards;
+            animation: verticalLine 350ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line .dot {
+    -webkit-animation: popup 400ms forwards;
+            animation: popup 400ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line::after {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: #ffc31f;
+    border-radius: 50%;
+    -webkit-animation: popup 450ms forwards;
+            animation: popup 450ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line::before {
+    top: 0;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line::after {
+    bottom: 0;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line {
+    display: none;
+    -webkit-animation: horizontalLine 350ms forwards;
+            animation: horizontalLine 350ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line .dot {
+    -webkit-animation: popup 400ms forwards;
+            animation: popup 400ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line::after {
+    content: "";
+    -webkit-animation: popup 400ms forwards;
+            animation: popup 400ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line::before {
+    left: 0;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line::after {
+    right: 0;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line {
+    display: none;
+    -webkit-animation: rightDiagonalLine 350ms forwards;
+            animation: rightDiagonalLine 350ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line .dot {
+    -webkit-animation: popup 400ms forwards;
+            animation: popup 400ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line::after {
+    content: "";
+    -webkit-animation: popup 400ms forwards;
+            animation: popup 400ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line::before {
+    left: 0;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line::after {
+    right: 0;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line {
+    display: none;
+    -webkit-animation: leftDiagonalLine 350ms forwards;
+            animation: leftDiagonalLine 350ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line .dot {
+    -webkit-animation: popup 400ms forwards;
+            animation: popup 400ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line::after {
+    content: "";
+    -webkit-animation: popup 400ms forwards;
+            animation: popup 400ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line::before {
+    left: 0;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line::after {
+    right: 0;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:nth-child(even) {
+    background: #c4c6f8;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:nth-child(odd) {
+    background: white;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .result-score {
+    margin-top: 5px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .result-score div {
+    padding: 5px 0;
+    width: 65px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .result-score div.player-score {
+    background: #fd3fa8;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .result-score div.ties {
+    background: #ffc31f;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .result-score div.bot-score {
+    background: #5adff6;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .result-score div p {
+    font-size: 8px;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+  }
+}
+
+@-webkit-keyframes redirect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes redirect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes displayMark {
+  0% {
+    display: none;
+    margin-bottom: 30px;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  50% {
+    margin-bottom: -40px;
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+  }
+  100% {
+    display: block;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes displayMark {
+  0% {
+    display: none;
+    margin-bottom: 30px;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  50% {
+    margin-bottom: -40px;
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+  }
+  100% {
+    display: block;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes verticalLine {
+  0% {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    height: 0;
+    width: 6px;
+    background: #ffc31f;
+  }
+  100% {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    height: 156px;
+    width: 6px;
+    background: #ffc31f;
+    z-index: 1;
+  }
+}
+
+@keyframes verticalLine {
+  0% {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    height: 0;
+    width: 6px;
+    background: #ffc31f;
+  }
+  100% {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    height: 156px;
+    width: 6px;
+    background: #ffc31f;
+    z-index: 1;
+  }
+}
+
+@-webkit-keyframes horizontalLine {
+  0% {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+    height: 6px;
+    width: 0;
+    background: #ffc31f;
+    z-index: 1;
+  }
+  100% {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+    height: 6px;
+    width: 158px;
+    background: #ffc31f;
+    z-index: 1;
+  }
+}
+
+@keyframes horizontalLine {
+  0% {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+    height: 6px;
+    width: 0;
+    background: #ffc31f;
+    z-index: 1;
+  }
+  100% {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+    height: 6px;
+    width: 158px;
+    background: #ffc31f;
+    z-index: 1;
+  }
+}
+
+@-webkit-keyframes rightDiagonalLine {
+  0% {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+    height: 6px;
+    width: 0;
+    background: #ffc31f;
+    z-index: 1;
+  }
+  100% {
+    position: absolute;
+    bottom: -68%;
+    left: -5%;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    height: 6px;
+    width: 220px;
+    background: #ffc31f;
+    z-index: 1;
+  }
+}
+
+@keyframes rightDiagonalLine {
+  0% {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+    height: 6px;
+    width: 0;
+    background: #ffc31f;
+    z-index: 1;
+  }
+  100% {
+    position: absolute;
+    bottom: -68%;
+    left: -5%;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    height: 6px;
+    width: 220px;
+    background: #ffc31f;
+    z-index: 1;
+  }
+}
+
+@-webkit-keyframes leftDiagonalLine {
+  0% {
+    position: absolute;
+    top: 50%;
+    right: 43%;
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+    height: 6px;
+    width: 0;
+    background: #ffc31f;
+    z-index: 1;
+  }
+  100% {
+    position: absolute;
+    bottom: -66%;
+    right: -6%;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    height: 6px;
+    width: 220px;
+    background: #ffc31f;
+    z-index: 1;
+  }
+}
+
+@keyframes leftDiagonalLine {
+  0% {
+    position: absolute;
+    top: 50%;
+    right: 43%;
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+    height: 6px;
+    width: 0;
+    background: #ffc31f;
+    z-index: 1;
+  }
+  100% {
+    position: absolute;
+    bottom: -66%;
+    right: -6%;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    height: 6px;
+    width: 220px;
+    background: #ffc31f;
+    z-index: 1;
+  }
+}
+
+@-webkit-keyframes popup {
+  0% {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: #ffc31f;
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: #ffc31f;
+    border-radius: 50%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes popup {
+  0% {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: #ffc31f;
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: #ffc31f;
+    border-radius: 50%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=singleplayer.css.map */

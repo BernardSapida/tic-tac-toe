@@ -10,9 +10,14 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
+    "@vueuse/sound": "^1.1.7",
     "core-js": "^3.8.3",
+    "howler": "^2.2.3",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue-audio": "^0.0.12",
+    "vue-router": "^4.0.3",
+    "vue-sound": "^0.0.4",
+    "vue-use-sound": "^1.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",

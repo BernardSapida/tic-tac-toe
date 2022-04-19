@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Jua&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 420px) {
+  body main .section-app-purple-theme .display-router .header-volume {
+    max-height: 44px;
+    width: 100vw;
+    padding: 8px 15px;
+    background-color: #16176f;
+    -webkit-animation: redirect 350ms forwards;
+            animation: redirect 350ms forwards;
+  }
+  body main .section-app-purple-theme .display-router .header-volume nav button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 28px;
+  }
+  body main .section-app-purple-theme .display-router section.section-volume-form {
+    height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-animation: redirect 1000ms forwards;
+            animation: redirect 1000ms forwards;
+  }
+  body main .section-app-purple-theme .display-router section.section-volume-form form {
+    max-width: 340px;
+    width: 90%;
+  }
+  body main .section-app-purple-theme .display-router section.section-volume-form form h1.title-volume {
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'Inter' !important;
+    font-weight: 900;
+    font-size: 34px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 20, 0.6);
+  }
+  body main .section-app-purple-theme .display-router section.section-volume-form form label {
+    display: block;
+    margin: auto;
+    max-width: 260px;
+    width: 95%;
+  }
+  body main .section-app-purple-theme .display-router section.section-volume-form form label p {
+    padding: 5px 0;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
+  body main .section-app-purple-theme .display-router section.section-volume-form form label input[type="range"] {
+    position: relative;
+    display: block;
+    margin: auto;
+    -webkit-appearance: none;
+    max-width: 260px;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(#fd3fa8), color-stop(0%, #fff), to(#fff));
+    background: linear-gradient(to right, #fd3fa8 0%, #fff 0%, #fff 100%);
+    border-radius: 5px;
+    height: 30px;
+    outline: none;
+    -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 20, 0.6);
+            box-shadow: 2px 2px 10px rgba(0, 0, 20, 0.6);
+  }
+  body main .section-app-purple-theme .display-router section.section-volume-form form label input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 40px;
+    width: 20px;
+    background: white;
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 20, 0.6);
+            box-shadow: 2px 2px 10px rgba(0, 0, 20, 0.6);
+  }
+  body main .section-app-purple-theme .display-router section.section-volume-form form label #mainVolumeValue, body main .section-app-purple-theme .display-router section.section-volume-form form label #markSoundValue {
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    width: 60px;
+    padding: 7px 7px;
+    text-align: center;
+    color: #000014;
+    font-size: 14px;
+    font-weight: bolder;
+    background: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 20, 0.6);
+            box-shadow: 2px 2px 10px rgba(0, 0, 20, 0.6);
+  }
+  body main .section-app-purple-theme .display-router section.section-volume-form form label #mainVolumeValue::before, body main .section-app-purple-theme .display-router section.section-volume-form form label #markSoundValue::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    border-bottom: 15px solid white;
+    border-top: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    z-index: 1;
+  }
+  body main .section-app-purple-theme .display-router section.section-volume-form form button {
+    display: block;
+    padding: 12px 12px;
+    margin: 15px auto;
+    max-width: 260px;
+    width: 95%;
+    background: #768afe;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    font-family: 'Inter' !important;
+    font-weight: 600;
+    font-size: 20px;
+    border: none;
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 20, 0.6);
+            box-shadow: 2px 2px 5px rgba(0, 0, 20, 0.6);
+  }
+  body main .section-app-purple-theme .display-router section.section-volume-form form button:hover {
+    background: #435ffe;
+  }
+}
+
+@-webkit-keyframes redirect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes redirect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=volume.css.map */

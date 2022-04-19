@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Jua&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 420px) {
+    body main .section-app-purple-theme .display-router {
+
+        & .header-multiplayer {
+            max-height: 44px;
+            width: 100vw;
+            padding: 8px 15px;
+            background-color: hsl(239, 67%, 26%);
+            animation: redirect 350ms forwards;
+
+            & nav button {
+                border: none;
+                background-color: transparent;
+                color: hsl(0, 0%, 100%);
+                font-size: 28px;
+            }
+        }
+
+        & section.section-multiplayer-form {
+            height: 85%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: redirect 1000ms forwards;
+
+            & form {
+                max-width: 340px;
+                width: 90%;
+                
+                & h1.title-multiplayer {
+                    margin: 30px 0;
+                    text-align: center;
+                    font-family: 'Inter' !important;
+                    font-weight: bolder;
+                    font-size: 34px;
+                    color: hsl(0, 0%, 100%);
+                    text-shadow: 2px 2px 5px hsla(240, 100%, 4%, 0.6);
+    
+                    & span {
+                        font-family: 'Inter' !important;
+                        color: hsl(327, 98%, 62%);
+                    }
+                }
+    
+                & > label {
+                    color: hsl(0, 0%, 100%);
+                    font-size: 16px;
+
+                    & p {
+                        padding-left: 30px;
+                        text-shadow: 2px 2px 5px hsl(240, 100%, 4%);
+                    }
+
+                    & input[type="text"] {
+                        margin: 0 auto 15px;
+                        padding: 12px 12px;
+                        display: block;
+                        max-width: 260px;
+                        width: 95%;
+                        text-align: left;
+                        border-radius: 3px;
+                        font-family: 'Inter' !important;
+                        font-size: 14px;
+                        border: none;
+                        box-shadow: 2px 2px 5px hsla(240, 100%, 4%, 0.6);
+                    }
+                }
+            
+                & div.container-mark {
+                    margin: auto;
+                    max-width: 260px;
+                    width: 95%;
+                    background: hsl(0, 0%, 100%);
+                    border-radius: 3px;
+                    box-shadow: 2px 2px 5px hsla(240, 100%, 4%, 0.6);
+    
+                    & p {
+                        padding: 5px 0;
+                        font-size: 9px;
+                        text-align: center;
+                    }
+    
+                    & div {
+                        margin: auto;
+                        padding: 3px 3px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        width: 90%;
+                        background: hsl(327, 98%, 62%);
+                        border-radius: 3px;
+    
+                        & label {
+                            display: inline-block;
+                            position: relative;
+                            width: 100%;
+                            font-size: 18px;
+                            font-weight: 900;
+                            text-align: center;
+                            color: hsl(0, 0%, 100%);
+                            line-height: .8;
+    
+                            & input[type="radio"] {
+                                display: none;
+    
+                                &:checked + div.playerMark {
+                                    height: 100%;
+                                    width: 100%;
+                                    color: hsl(327, 98%, 62%);
+                                    background: hsl(0, 0%, 100%);
+                                    transition: 350ms cubic-bezier(0.52,-0.54, 0.29, 1.49);
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                & button {
+                    display: block;
+                    padding: 12px 12px;
+                    margin: 15px auto;
+                    max-width: 260px;
+                    width: 95%;
+                    background: hsl(44, 100%, 56%);
+                    color: hsl(0, 0%, 100%);
+                    text-align: center;
+                    border-radius: 3px;
+                    font-family: 'Inter' !important;
+                    font-weight: 600;
+                    font-size: 20px;
+                    border: none;
+                    box-shadow: 2px 2px 5px hsla(240, 100%, 4%, 0.6);
+
+                    &:hover {
+                        background: hsl(44, 100%, 46%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes redirect {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}

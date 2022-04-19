@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Jua&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 420px) {
+    body main .section-app-purple-theme .display-router {
+
+        & .header-volume {
+            max-height: 44px;
+            width: 100vw;
+            padding: 8px 15px;
+            background-color: hsl(239, 67%, 26%);
+            animation: redirect 350ms forwards;
+
+            & nav button {
+                border: none;
+                background-color: transparent;
+                color: hsl(0, 0%, 100%);
+                font-size: 28px;
+            }
+        }
+
+        & section.section-volume-form {
+            height: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: redirect 1000ms forwards;
+
+            & form {
+                max-width: 340px;
+                width: 90%;
+
+                & h1.title-volume {
+                    padding: 20px 0;
+                    text-align: center;
+                    font-family: 'Inter' !important;
+                    font-weight: 900;
+                    font-size: 34px;
+                    color: hsl(0, 0%, 100%);
+                    text-shadow: 2px 2px 5px hsla(240, 100%, 4%, 0.6);
+                }
+
+                & label {
+                    display: block;
+                    margin: auto;
+                    max-width: 260px;
+                    width: 95%;
+
+                    & p {
+                        padding: 5px 0;
+                        color: hsl(0, 0%, 100%);
+                        font-size: 14px;
+                        font-weight: 600;
+                        text-align: center;
+                    }                   
+                    
+                    & input[type="range"] {
+                        position: relative;
+                        display: block;
+                        margin: auto;
+                        -webkit-appearance: none;
+                        max-width: 260px;
+                        width: 100%;
+                        background: linear-gradient(to right, hsl(327, 98%, 62%) 0%, #fff 0%, #fff 100%);
+                        border-radius: 5px;
+                        height: 30px;
+                        outline: none;
+                        box-shadow: 2px 2px 10px hsla(240, 100%, 4%, 0.6);
+
+                        &::-webkit-slider-thumb {
+                            -webkit-appearance: none;
+                            height: 40px;
+                            width: 20px;
+                            background: hsl(0, 0%, 100);
+                            border-radius: 3px;
+                            box-shadow: 2px 2px 10px hsla(240, 100%, 4%, 0.6);   
+                        }
+                    }
+
+                    & #mainVolumeValue, & #markSoundValue {
+                        position: relative;
+                        display: block;
+                        margin: 20px auto;
+                        width: 60px;
+                        padding: 7px 7px;
+                        text-align: center;
+                        color: hsl(240, 100%, 4%);
+                        font-size: 14px;
+                        font-weight: bolder;
+                        background: hsl(0, 0%, 100%);
+                        border-radius: 5px;
+                        box-shadow: 2px 2px 10px hsla(240, 100%, 4%, 0.6); 
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: -30%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            border-bottom: 15px solid hsl(0, 0%, 100%);
+                            border-top: 15px solid transparent;
+                            border-left: 15px solid transparent;
+                            border-right: 15px solid transparent;
+                            z-index: 1;
+                        }
+                    }
+                }
+    
+                & button {
+                    display: block;
+                    padding: 12px 12px;
+                    margin: 15px auto;
+                    max-width: 260px;
+                    width: 95%;
+                    background: hsl(231, 99%, 73%);
+                    color: hsl(0, 0%, 100%);
+                    text-align: center;
+                    border-radius: 3px;
+                    font-family: 'Inter' !important;
+                    font-weight: 600;
+                    font-size: 20px;
+                    border: none;
+                    box-shadow: 2px 2px 5px hsla(240, 100%, 4%, 0.6);
+
+                    &:hover {
+                        background: hsl(231, 99%, 63%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes redirect {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import App from '../App';
 import NewGame from '../views/NewGame.vue';
+import SinglePlayer from '../views/SinglePlayer.vue';
 import Multiplayer from '../views/Multiplayer.vue';
 import Volume from '../views/Volume.vue';
 import Theme from '../views/Theme.vue';
@@ -17,6 +18,11 @@ const routes = [
     path: '/newgame',
     name: 'newgame',
     component: NewGame
+  },
+  {
+    path: '/singleplayer',
+    name: 'singleplayer',
+    component: SinglePlayer
   },
   {
     path: '/multiplayer',

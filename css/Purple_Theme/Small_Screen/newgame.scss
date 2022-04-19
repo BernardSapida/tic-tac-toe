@@ -11,6 +11,7 @@
     body main .section-app-purple-theme .display-router {
 
         & .header-newgame {
+            max-height: 44px;
             width: 100vw;
             padding: 8px 15px;
             background-color: hsl(239, 67%, 26%);
@@ -23,7 +24,8 @@
                 font-size: 28px;
             }
         }
-        & section.section-form {
+
+        & section.section-newgame-form {
             height: 90%;
             display: flex;
             align-items: center;
@@ -31,11 +33,14 @@
             animation: redirect 1000ms forwards;
 
             & form {
+                max-width: 340px;
+                width: 90%;
+
                 & h1.title-newgame {
                     text-align: center;
                     font-family: 'Inter' !important;
-                    font-weight: bolder;
-                    font-size: 36px;
+                    font-weight: 900;
+                    font-size: 34px;
                     color: hsl(0, 0%, 100%);
                     text-shadow: 2px 2px 5px hsla(240, 100%, 4%, 0.6);
     
@@ -67,6 +72,7 @@
                         font-family: 'Inter' !important;
                         font-weight: 600;
                         font-size: 20px;
+                        box-shadow: 2px 2px 5px hsla(240, 100%, 4%, 0.6);
                     }
                 }
             
@@ -76,11 +82,13 @@
                     width: 95%;
                     background: hsl(0, 0%, 100%);
                     border-radius: 3px;
+                    box-shadow: 2px 2px 5px hsla(240, 100%, 4%, 0.6);
     
                     & p {
                         padding: 5px 0;
                         font-size: 10px;
                         text-align: center;
+                        line-height: .8;
                     }
     
                     & div {
@@ -98,14 +106,14 @@
                             position: relative;
                             width: 100%;
                             font-size: 18px;
-                            font-weight: bolder;
+                            font-weight: 900;
                             text-align: center;
                             color: hsl(0, 0%, 100%);
     
                             & input[type="radio"] {
                                 display: none;
     
-                                &:checked + div.difficulty-selection {
+                                &:checked + div.playerMark {
                                     height: 100%;
                                     width: 100%;
                                     color: hsl(327, 98%, 62%);
@@ -131,6 +139,11 @@
                     font-weight: 600;
                     font-size: 20px;
                     border: none;
+                    box-shadow: 2px 2px 5px hsla(240, 100%, 4%, 0.6);
+
+                    &:hover {
+                        background: hsl(44, 100%, 46%);
+                    }
                 }
             }
         }

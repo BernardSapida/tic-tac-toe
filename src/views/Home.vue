@@ -16,12 +16,12 @@ import Theme from './../views/Theme.vue';
 
 export default {
   name: 'Home',
-  components: {
-    Multiplayer,
-    NewGame,
-    Theme,
-    Volume
-  },
+  // components: {
+  //   Multiplayer,
+  //   NewGame,
+  //   Theme,
+  //   Volume
+  // },
   methods: {
     redirectToNewGame() {
       this.$router.push({ name: 'newgame' });
