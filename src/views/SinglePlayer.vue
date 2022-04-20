@@ -103,11 +103,6 @@
                 let confettiSettings = { target: 'my-canvas', size: 1.5, rotate: true, clock: 15, colors: [[255, 0, 0], [174, 0, 255], [0, 255, 89], [0, 162, 255]] };
                 let confetti = new ConfettiGenerator(confettiSettings);
                 confetti.render();
-                setTimeout(() => {
-                    confettiSettings = {  target: 'my-canvas', respawn: false };
-                    confetti = new ConfettiGenerator({ respawn: false });
-                    confetti.render();
-                }, 1000);
             },
             analyzeBoard() {
                 let div = document.createElement("div");
