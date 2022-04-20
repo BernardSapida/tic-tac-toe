@@ -8,6 +8,9 @@
 }
 
 @media only screen and (max-width: 420px) {
+  body main .section-app-purple-theme .display-router {
+    overflow: hidden;
+  }
   body main .section-app-purple-theme .display-router .header-singleplayer {
     max-height: 44px;
     width: 100vw;
@@ -65,6 +68,7 @@
     height: 90%;
     max-width: 340px;
     width: 90%;
+    overflow: hidden;
   }
   body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .profile {
     margin-inline: auto;
@@ -230,6 +234,11 @@
     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
   }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div.active {
+    background-color: #FFC11D !important;
+    -webkit-transition: all 350ms ease-in;
+    transition: all 350ms ease-in;
+  }
   body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-x {
     position: absolute;
     height: 65px;
@@ -240,8 +249,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 45px;
-    width: 13px;
+    height: 50px;
+    width: 15px;
     background: #fd3fa8;
     border-radius: 3px;
   }
@@ -292,91 +301,6 @@
     -webkit-animation: displayMark 350ms forwards;
             animation: displayMark 350ms forwards;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line {
-    display: none;
-    -webkit-animation: verticalLine 350ms forwards;
-            animation: verticalLine 350ms forwards;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line .dot {
-    -webkit-animation: popup 400ms forwards;
-            animation: popup 400ms forwards;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line::after {
-    content: "";
-    position: absolute;
-    height: 12px;
-    width: 12px;
-    background: #ffc31f;
-    border-radius: 50%;
-    -webkit-animation: popup 450ms forwards;
-            animation: popup 450ms forwards;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line::before {
-    top: 0;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line::after {
-    bottom: 0;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line {
-    display: none;
-    -webkit-animation: horizontalLine 350ms forwards;
-            animation: horizontalLine 350ms forwards;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line .dot {
-    -webkit-animation: popup 400ms forwards;
-            animation: popup 400ms forwards;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line::after {
-    content: "";
-    -webkit-animation: popup 400ms forwards;
-            animation: popup 400ms forwards;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line::before {
-    left: 0;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line::after {
-    right: 0;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line {
-    display: none;
-    -webkit-animation: rightDiagonalLine 350ms forwards;
-            animation: rightDiagonalLine 350ms forwards;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line .dot {
-    -webkit-animation: popup 400ms forwards;
-            animation: popup 400ms forwards;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line::after {
-    content: "";
-    -webkit-animation: popup 400ms forwards;
-            animation: popup 400ms forwards;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line::before {
-    left: 0;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line::after {
-    right: 0;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line {
-    display: none;
-    -webkit-animation: leftDiagonalLine 350ms forwards;
-            animation: leftDiagonalLine 350ms forwards;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line .dot {
-    -webkit-animation: popup 400ms forwards;
-            animation: popup 400ms forwards;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line::after {
-    content: "";
-    -webkit-animation: popup 400ms forwards;
-            animation: popup 400ms forwards;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line::before {
-    left: 0;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line::after {
-    right: 0;
-  }
   body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:nth-child(even) {
     background: #c4c6f8;
   }
@@ -412,6 +336,17 @@
     text-align: center;
     font-weight: bolder;
     color: white;
+  }
+  body main .section-app-purple-theme .display-router .section-singleplayer-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
   }
 }
 
@@ -468,246 +403,6 @@
     display: block;
     -webkit-transform: scaleY(1);
             transform: scaleY(1);
-  }
-}
-
-@-webkit-keyframes verticalLine {
-  0% {
-    position: absolute;
-    top: 43%;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0%);
-            transform: translate(-50%, 0%);
-    height: 0;
-    width: 6px;
-    background: #ffc31f;
-  }
-  100% {
-    position: absolute;
-    top: 43%;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0%);
-            transform: translate(-50%, 0%);
-    height: 156px;
-    width: 6px;
-    background: #ffc31f;
-    z-index: 1;
-  }
-}
-
-@keyframes verticalLine {
-  0% {
-    position: absolute;
-    top: 43%;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0%);
-            transform: translate(-50%, 0%);
-    height: 0;
-    width: 6px;
-    background: #ffc31f;
-  }
-  100% {
-    position: absolute;
-    top: 43%;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0%);
-            transform: translate(-50%, 0%);
-    height: 156px;
-    width: 6px;
-    background: #ffc31f;
-    z-index: 1;
-  }
-}
-
-@-webkit-keyframes horizontalLine {
-  0% {
-    position: absolute;
-    top: 50%;
-    left: 43%;
-    -webkit-transform: translate(0%, -50%);
-            transform: translate(0%, -50%);
-    height: 6px;
-    width: 0;
-    background: #ffc31f;
-    z-index: 1;
-  }
-  100% {
-    position: absolute;
-    top: 50%;
-    left: 43%;
-    -webkit-transform: translate(0%, -50%);
-            transform: translate(0%, -50%);
-    height: 6px;
-    width: 158px;
-    background: #ffc31f;
-    z-index: 1;
-  }
-}
-
-@keyframes horizontalLine {
-  0% {
-    position: absolute;
-    top: 50%;
-    left: 43%;
-    -webkit-transform: translate(0%, -50%);
-            transform: translate(0%, -50%);
-    height: 6px;
-    width: 0;
-    background: #ffc31f;
-    z-index: 1;
-  }
-  100% {
-    position: absolute;
-    top: 50%;
-    left: 43%;
-    -webkit-transform: translate(0%, -50%);
-            transform: translate(0%, -50%);
-    height: 6px;
-    width: 158px;
-    background: #ffc31f;
-    z-index: 1;
-  }
-}
-
-@-webkit-keyframes rightDiagonalLine {
-  0% {
-    position: absolute;
-    top: 50%;
-    left: 43%;
-    -webkit-transform: translate(0%, -50%);
-            transform: translate(0%, -50%);
-    height: 6px;
-    width: 0;
-    background: #ffc31f;
-    z-index: 1;
-  }
-  100% {
-    position: absolute;
-    bottom: -68%;
-    left: -5%;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-    height: 6px;
-    width: 220px;
-    background: #ffc31f;
-    z-index: 1;
-  }
-}
-
-@keyframes rightDiagonalLine {
-  0% {
-    position: absolute;
-    top: 50%;
-    left: 43%;
-    -webkit-transform: translate(0%, -50%);
-            transform: translate(0%, -50%);
-    height: 6px;
-    width: 0;
-    background: #ffc31f;
-    z-index: 1;
-  }
-  100% {
-    position: absolute;
-    bottom: -68%;
-    left: -5%;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-    height: 6px;
-    width: 220px;
-    background: #ffc31f;
-    z-index: 1;
-  }
-}
-
-@-webkit-keyframes leftDiagonalLine {
-  0% {
-    position: absolute;
-    top: 50%;
-    right: 43%;
-    -webkit-transform: translate(0%, -50%);
-            transform: translate(0%, -50%);
-    height: 6px;
-    width: 0;
-    background: #ffc31f;
-    z-index: 1;
-  }
-  100% {
-    position: absolute;
-    bottom: -66%;
-    right: -6%;
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-    height: 6px;
-    width: 220px;
-    background: #ffc31f;
-    z-index: 1;
-  }
-}
-
-@keyframes leftDiagonalLine {
-  0% {
-    position: absolute;
-    top: 50%;
-    right: 43%;
-    -webkit-transform: translate(0%, -50%);
-            transform: translate(0%, -50%);
-    height: 6px;
-    width: 0;
-    background: #ffc31f;
-    z-index: 1;
-  }
-  100% {
-    position: absolute;
-    bottom: -66%;
-    right: -6%;
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-    height: 6px;
-    width: 220px;
-    background: #ffc31f;
-    z-index: 1;
-  }
-}
-
-@-webkit-keyframes popup {
-  0% {
-    position: absolute;
-    height: 12px;
-    width: 12px;
-    background: #ffc31f;
-    border-radius: 50%;
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  100% {
-    position: absolute;
-    height: 12px;
-    width: 12px;
-    background: #ffc31f;
-    border-radius: 50%;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes popup {
-  0% {
-    position: absolute;
-    height: 12px;
-    width: 12px;
-    background: #ffc31f;
-    border-radius: 50%;
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  100% {
-    position: absolute;
-    height: 12px;
-    width: 12px;
-    background: #ffc31f;
-    border-radius: 50%;
-    -webkit-transform: scale(1);
-            transform: scale(1);
   }
 }
 /*# sourceMappingURL=singleplayer.css.map */

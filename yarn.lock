@@ -2328,6 +2328,11 @@
   "resolved" "https://registry.npmmirror.com/concat-map/-/concat-map-0.0.1.tgz"
   "version" "0.0.1"
 
+"confetti-js@^0.0.18":
+  "integrity" "sha512-0B7pYmZGBZuBkN32ydjWRpJLfRUT9KZYkQKkC4SGrAsUq0XE2DLY5foCWBXMXXVg7sFKs3qIb+qsDx1eFTeSvA=="
+  "resolved" "https://registry.npmjs.org/confetti-js/-/confetti-js-0.0.18.tgz"
+  "version" "0.0.18"
+
 "connect-history-api-fallback@^1.6.0":
   "integrity" "sha512-e54B99q/OUoH64zYYRf3HBP5z24G38h5D3qXu23JGRoigpX5Ss4r9ZnDk3g0Z8uQC2x2lPaJ+UlWBc1ZWBWdLg=="
   "resolved" "https://registry.npmmirror.com/connect-history-api-fallback/-/connect-history-api-fallback-1.6.0.tgz"

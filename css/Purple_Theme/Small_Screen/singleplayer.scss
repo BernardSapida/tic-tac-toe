@@ -9,6 +9,7 @@
 
 @media only screen and (max-width: 420px) {
     body main .section-app-purple-theme .display-router {
+        overflow: hidden;
 
         & .header-singleplayer {
             max-height: 44px;
@@ -60,6 +61,7 @@
             height: 90%;
             max-width: 340px;
             width: 90%;
+            overflow: hidden;
 
             & .section-singleplayer-container {
                 & .profile {
@@ -207,6 +209,11 @@
                             border-radius: 3px;
                             box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.25);
 
+                            &.active {
+                                background-color: #FFC11D !important;
+                                transition: all 350ms ease-in;
+                            }
+
                             &:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span {                                
                                 &.mark-x {
                                     position: absolute;
@@ -218,8 +225,8 @@
                                         position: absolute;
                                         top: 50%;
                                         left: 50%;
-                                        height: 45px;
-                                        width: 13px;
+                                        height: 50px;
+                                        width: 15px;
                                         background: hsl(327, 98%, 62%);
                                         border-radius: 3px;
                                     }
@@ -275,99 +282,6 @@
                                 animation: displayMark 350ms forwards;
                             }
 
-                            &:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .vertical-line {
-                                display: none;
-                                animation: verticalLine 350ms forwards;
-
-                                & .dot {
-                                    animation: popup 400ms forwards;
-                                }
-
-                                &::before, &::after {
-                                    content: "";
-                                    position: absolute;
-                                    height: 12px;
-                                    width: 12px;
-                                    background: hsl(44, 100%, 56%);
-                                    border-radius: 50%;
-                                    animation: popup 450ms forwards;
-                                }
-
-                                &::before {
-                                    top: 0;
-                                }
-
-                                &::after {
-                                    bottom: 0;
-                                }
-                            }
-
-                            &:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .horizontal-line {
-                                display: none;
-                                animation: horizontalLine 350ms forwards;
-
-                                & .dot {
-                                    animation: popup 400ms forwards;
-                                }
-
-                                &::before, &::after {
-                                    content: "";
-                                    animation: popup 400ms forwards;
-                                }
-
-                                &::before {
-                                    left: 0;
-                                }
-
-                                &::after {
-                                    right: 0;
-                                }
-                            }
-
-                            &:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .right-diagonal-line {
-                                display: none;
-                                animation: rightDiagonalLine 350ms forwards;
-
-                                & .dot {
-                                    animation: popup 400ms forwards;
-                                }
-
-                                &::before, &::after {
-                                    content: "";
-                                    animation: popup 400ms forwards;
-                                }
-
-                                &::before {
-                                    left: 0;
-                                }
-
-                                &::after {
-                                    right: 0;
-                                }
-                            }
-
-                            &:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .left-diagonal-line {
-                                display: none;
-                                animation: leftDiagonalLine 350ms forwards;
-
-                                & .dot {
-                                    animation: popup 400ms forwards;
-                                }
-
-                                &::before, &::after {
-                                    content: "";
-                                    animation: popup 400ms forwards;
-                                }
-
-                                &::before {
-                                    left: 0;
-                                }
-
-                                &::after {
-                                    right: 0;
-                                }
-                            }
-
                             &:nth-child(even) {
                                 background: hsl(237, 79%, 87%);
                             }
@@ -413,6 +327,16 @@
                 }
             }
         }
+
+        & .section-singleplayer-modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            width: 100%;
+            backdrop-filter: blur(3px);
+        }
     }
 }
 
@@ -439,115 +363,5 @@
     100% {
         display: block;
         transform: scaleY(1);
-    }
-}
-
-@keyframes verticalLine {
-    0% {
-        position: absolute;
-        top: 43%;
-        left: 50%;
-        transform: translate(-50%, 0%);
-        height: 0;
-        width: 6px;
-        background: hsl(44, 100%, 56%);
-    }
-    100% {
-        position: absolute;
-        top: 43%;
-        left: 50%;
-        transform: translate(-50%, 0%);
-        height: 156px;
-        width: 6px;
-        background: hsl(44, 100%, 56%);
-        z-index: 1;
-    }
-}
-
-@keyframes horizontalLine {
-    0% {
-        position: absolute;
-        top: 50%;
-        left: 43%;
-        transform: translate(0%, -50%);
-        height: 6px;
-        width: 0;
-        background: hsl(44, 100%, 56%);
-        z-index: 1;
-    }
-    100% {
-        position: absolute;
-        top: 50%;
-        left: 43%;
-        transform: translate(0%, -50%);
-        height: 6px;
-        width: 158px;
-        background: hsl(44, 100%, 56%);
-        z-index: 1;
-    }
-}
-
-@keyframes rightDiagonalLine {
-    0% {
-        position: absolute;
-        top: 50%;
-        left: 43%;
-        transform: translate(0%, -50%);
-        height: 6px;
-        width: 0;
-        background: hsl(44, 100%, 56%);
-        z-index: 1;
-    }
-    100% {
-        position: absolute;
-        bottom: -68%;
-        left: -5%;
-        transform: rotate(45deg);
-        height: 6px;
-        width: 220px;
-        background: hsl(44, 100%, 56%);
-        z-index: 1;
-    }
-}
-
-@keyframes leftDiagonalLine {
-    0% {
-        position: absolute;
-        top: 50%;
-        right: 43%;
-        transform: translate(0%, -50%);
-        height: 6px;
-        width: 0;
-        background: hsl(44, 100%, 56%);
-        z-index: 1;
-    }
-    100% {
-        position: absolute;
-        bottom: -66%;
-        right: -6%;
-        transform: rotate(-45deg);
-        height: 6px;
-        width: 220px;
-        background: hsl(44, 100%, 56%);
-        z-index: 1;
-    }
-}
-
-@keyframes popup {
-    0% {
-        position: absolute;
-        height: 12px;
-        width: 12px;
-        background: hsl(44, 100%, 56%);
-        border-radius: 50%;
-        transform: scale(0);
-    }
-    100% {
-        position: absolute;
-        height: 12px;
-        width: 12px;
-        background: hsl(44, 100%, 56%);
-        border-radius: 50%;
-        transform: scale(1);
     }
 }
