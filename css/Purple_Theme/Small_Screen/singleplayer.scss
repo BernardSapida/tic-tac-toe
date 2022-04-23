@@ -187,20 +187,15 @@
                     }
                 }  
                 
-                & .board-score {
+                & table.container-board {
+                    margin-top: 20px;
                     margin-inline: auto;
                     width: max-content;
+                    border-spacing: 7px 4px;
 
-                    & .board {
-                        margin-top: 20px;
-                        height: 220px;
-                        width: 220px;
-                        display: grid;
-                        grid-template-columns: 1fr 1fr 1fr;
-                        place-items: center;
-                        overflow: hidden;
-
-                        & > div {
+                    & tr.board {
+                        display: block;
+                        & td div {
                             position: relative;
                             display: grid;
                             place-items: center;
@@ -214,8 +209,8 @@
                                 transition: all 350ms ease-in;
                             }
 
-                            &:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span {                                
-                                &.mark-x {
+                            &:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span {                                
+                                &#mark-X {
                                     position: absolute;
                                     height: 65px;
                                     width: 65px;
@@ -240,7 +235,7 @@
                                     }
                                 }
 
-                                &.mark-o {
+                                &#mark-O {
                                     position: absolute;
                                     height: 65px;
                                     width: 65px;
@@ -274,11 +269,11 @@
                                 }
                             }
 
-                            &:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .mark-x {
+                            &:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) #mark-X {
                                 animation: displayMark 350ms forwards;
                             }
 
-                            &:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .mark-o {
+                            &:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) #mark-O {
                                 animation: displayMark 350ms forwards;
                             }
 

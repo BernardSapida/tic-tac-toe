@@ -206,24 +206,18 @@
     font-size: 30px;
     color: #5adff6;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board {
+    margin-top: 20px;
     margin-inline: auto;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+    border-spacing: 7px 4px;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board {
-    margin-top: 20px;
-    height: 220px;
-    width: 220px;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
-    overflow: hidden;
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board {
+    display: block;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div {
     position: relative;
     display: -ms-grid;
     display: grid;
@@ -234,17 +228,17 @@
     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div.active {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div.active {
     background-color: #FFC11D !important;
     -webkit-transition: all 350ms ease-in;
     transition: all 350ms ease-in;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-x {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X {
     position: absolute;
     height: 65px;
     width: 65px;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-x::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-x::after {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -254,20 +248,20 @@
     background: #fd3fa8;
     border-radius: 3px;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-x::before {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X::before {
     -webkit-transform: translate(-50%, -50%) rotate(45deg);
             transform: translate(-50%, -50%) rotate(45deg);
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-x::after {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X::after {
     -webkit-transform: translate(-50%, -50%) rotate(-45deg);
             transform: translate(-50%, -50%) rotate(-45deg);
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-o {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O {
     position: absolute;
     height: 65px;
     width: 65px;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-o::before {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -279,7 +273,7 @@
             box-shadow: 0px 0px 0px 13px #5adff6, 4px 4px 4px 13px rgba(0, 0, 0, 0.5), -4px -4px 4px 13px rgba(255, 255, 255, 0.5);
     z-index: 1;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-o::after {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -289,25 +283,25 @@
     border-radius: 50%;
     background: linear-gradient(-45deg, transparent 40%, rgba(0, 0, 0, 0.5));
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-o::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) span.mark-o::after {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O::after {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .mark-x {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) #mark-X {
     -webkit-animation: displayMark 350ms forwards;
             animation: displayMark 350ms forwards;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:is(#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9) .mark-o {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) #mark-O {
     -webkit-animation: displayMark 350ms forwards;
             animation: displayMark 350ms forwards;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:nth-child(even) {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:nth-child(even) {
     background: #c4c6f8;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .board > div:nth-child(odd) {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:nth-child(odd) {
     background: white;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .result-score {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board .result-score {
     margin-top: 5px;
     display: -ms-grid;
     display: grid;
@@ -315,23 +309,23 @@
         grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .result-score div {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board .result-score div {
     padding: 5px 0;
     width: 65px;
     border-radius: 3px;
     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .result-score div.player-score {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board .result-score div.player-score {
     background: #fd3fa8;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .result-score div.ties {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board .result-score div.ties {
     background: #ffc31f;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .result-score div.bot-score {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board .result-score div.bot-score {
     background: #5adff6;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container .board-score .result-score div p {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board .result-score div p {
     font-size: 8px;
     text-align: center;
     font-weight: bolder;
