@@ -35,41 +35,60 @@
                 </div>
             </div>
             <table class="container-board">
-                <tr class="board">
-                    <td><div id="tile0" class="tiles"></div></td>
-                    <td><div id="tile1" class="tiles"></div></td>
-                    <td><div id="tile2" class="tiles"></div></td>
-                </tr>
-                <tr class="board">
-                    <td><div id="tile3" class="tiles"></div></td>
-                    <td><div id="tile4" class="tiles"></div></td>
-                    <td><div id="tile5" class="tiles"></div></td>
-                </tr>
-                <tr class="board">
-                    <td><div id="tile6" class="tiles"></div></td>
-                    <td><div id="tile7" class="tiles"></div></td>
-                    <td><div id="tile8" class="tiles"></div></td>
-                </tr>
-                <div class="result-score">
-                    <div class="player-score">
-                        <p @click="none">YOUR SCORE</p>
-                        <p>3</p>
-                    </div>
-                    <div class="ties">
-                        <p>TIES</p>
-                        <p>1</p>
-                    </div>
-                    <div class="bot-score">
-                        <p>BOT SCORE</p>
-                        <p>6</p>
-                    </div>
-                </div>
+                <tbody>
+                    <tr class="board">
+                        <td><div id="tile0" class="tiles"><span id="mark-X"></span></div></td>
+                        <td><div id="tile1" class="tiles"><span id="mark-X"></span></div></td>
+                        <td><div id="tile2" class="tiles"><span id="mark-X"></span></div></td>
+                    </tr>
+                    <tr class="board">
+                        <td><div id="tile3" class="tiles"><span id="mark-X"></span></div></td>
+                        <td><div id="tile4" class="tiles"><span id="mark-X"></span></div></td>
+                        <td><div id="tile5" class="tiles"><span id="mark-X"></span></div></td>
+                    </tr>
+                    <tr class="board">
+                        <td><div id="tile6" class="tiles"><span id="mark-X"></span></div></td>
+                        <td><div id="tile7" class="tiles"><span id="mark-X"></span></div></td>
+                        <td><div id="tile8" class="tiles"><span id="mark-X"></span></div></td>
+                    </tr>
+                </tbody>
+                <tfoot class="result-score">
+                    <tr>
+                        <td class="player-score">
+                            <p>YOUR SCORE</p>
+                            <p>3</p>
+                        </td>
+                        <td class="ties">
+                            <p>TIES</p>
+                            <p>1</p>
+                        </td>
+                        <td class="bot-score">
+                            <p>BOT SCORE</p>
+                            <p>6</p>
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </section>
-    <!-- <div class="section-singleplayer-modal" @click="confetti">
-        <canvas id="my-canvas" @click="confetti"></canvas>
-    </div> -->
+    <section id="section-singleplayer-modal">
+        <div class="container-winners-modal">
+            <canvas id="confetti"></canvas>
+            <div class="icon-star"><fa icon="star"/></div>
+            <div class="modal-text">
+                <p class="text-congratulation" v-if="gameInfo.playerWinner == 'HUMAN'">CONGRATULATION</p>
+                <p class="text-result" v-if="gameInfo.playerWinner == 'HUMAN'">YOU WON!</p>
+                <p class="text-congratulation" v-if="gameInfo.playerWinner == 'TIE'">NICE TRY</p>
+                <p class="text-result" v-if="gameInfo.playerWinner == 'TIE'">TIE GAME!</p>
+                <p class="text-congratulation" v-if="gameInfo.playerWinner == 'AI'">BETTER LUCK NEXT TIME</p>
+                <p class="text-result" v-if="gameInfo.playerWinner == 'AI'">YOU LOSE!</p>
+            </div>
+            <div class="container-btn">
+                <button type="button" @click="goHome"><fa class="btn-leave" icon="right-from-bracket" /></button>
+                <button type="button" @click="playAgain"><fa class="btn-play-again" icon="arrow-rotate-left"/></button>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -84,10 +103,12 @@
                     aiMark: 'O',
                     numberOfMark: 0,
                     playerTurn: '',
-                    board:[0, 1, 2, 3, 4, 5, 6, 7, 8],
+                    playerWinner: null,
+                    board: [0, 1, 2, 3, 4, 5, 6, 7, 8],
                     markRecord: [],
                     time: 15,
-                    boardRecord: [[[null, null, null],[null, null, null],[null, null, null]]],
+                    runTime: setInterval(() => this.gameInfo.time -= 1, 1000),
+                    boardRecord: [[]],
                     winCombinations: [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[6, 4, 2]],
                 }
             }
@@ -95,16 +116,35 @@
         mounted() {
             let tiles = document.querySelectorAll('.tiles');
             // Disable events for entire tiles
-            for(let i = 0; i < tiles.length; i++) {
-                tiles[i].addEventListener('click', this.clickedTile, false);
-            }
+            for(let i = 0; i < tiles.length; i++) tiles[i].addEventListener('click', this.clickedTile, false);
+    
+            this.gameInfo.runTime;
+            this.confetti();
         },
         methods: {
             goBack() {
                 this.$router.go(-2);
             },
+            goHome() {
+                this.$router.push({ name: 'home' });
+            },
+            playAgain() {
+                let tiles = document.querySelectorAll('.tiles');
+
+                this.gameInfo.board = Array.from(Array(9).keys());
+                for(let index = 0; index < 9; index++) {
+                    document.getElementById(`tile${index}`).removeChild(document.getElementById(`tile${index}`).lastChild);
+                    tiles[index].addEventListener('click', this.clickedTile, false);
+                }
+                document.getElementById('section-singleplayer-modal').remove();
+
+                this.gameInfo.playerTurn = 'HUMAN';
+                this.gameInfo.numberOfMark = 0;
+                this.gameInfo.markRecord = [];
+                this.gameInfo.time = 15;
+            },
             confetti() {
-                let confettiSettings = { target: 'my-canvas', size: 1.5, rotate: true, clock: 15, colors: [[255, 0, 0], [174, 0, 255], [0, 255, 89], [0, 162, 255]] };
+                let confettiSettings = { target: 'confetti', size: 1.5, rotate: true, respawn: false, clock: 10, colors: [[255, 0, 0], [174, 0, 255], [0, 255, 89], [0, 162, 255]] };
                 let confetti = new ConfettiGenerator(confettiSettings);
                 confetti.render();
             },
@@ -138,17 +178,43 @@
                     tiles[i].removeEventListener('click', this.clickedTile, false);
                 }
             },
-            // stopTime(time) {
-            //     console.log('TIME STOPPED!');
-            //     clearInterval(time, 15000);
-            // },
+            clickedTile(tile) {
+                let tileId = Number(tile.target.id.slice(-1));
+                
+                // Check if the value of board array's index based on id of the cell is a number.
+                // If it contains a type of number, then it means that it's already taken.
+                if(typeof this.gameInfo.board[tileId] == 'number') {
+                    let { humanMark, aiMark } = this.gameInfo;
+                    
+                    // let time = setInterval(() => this.gameInfo.time -= 1, 1000);
+                    
+                    // Get the id of cell that have been clicked && humanMark ('O')
+                    // setTimeout(() => clearInterval(decreaseTime), this.gameInfo.time*1000);
+                    // this.gameInfo.time = 15;
+                    // if(this.turn(tileId, humanMark) !== undefined) return 0;
+                    
+                    // Disable events for entire cells
+                    if(this.turn(tileId, humanMark) !== undefined) return;
+                    this.disableEvents();
+                    clearInterval(this.gameInfo.runTime);
+                    // checkTie function will return true if it's a tie, else false.
+                    // bestSpot function will return the first empty spot in array.
+                    // TIME = setInterval(() => this.gameInfo.time -= 1, 1000);
+
+                    this.gameInfo.runTime = setInterval(() => this.gameInfo.time -= 1, 1000);
+                    setTimeout(() => {
+                        if(!this.checkTie()) {
+                            this.turn(this.bestSpot(), aiMark);
+                        }
+                    }, Math.ceil((Math.random()*3)+1)*1000);
+                }
+            },
             gameOver(gameWon) {
                 let cells = document.querySelectorAll('.cells');
                 let { winCombinations, humanMark } = this.gameInfo;
 
                 // Obtaining 3 index of winning combinations and loop based on length (which is 3)
                 for(let index of winCombinations[gameWon.index]) {
-                    
                     // Having blue background color if mark is human, else red
                     document.getElementById(`tile${index}`).classList.add('active');
                 }
@@ -157,6 +223,9 @@
                 for(let i = 0; i < cells.length; i++) {
                     cells[i].removeEventListener('click', this.clickedTile, false);
                 }
+
+                if(gameWon.mark == humanMark) this.gameInfo.playerWinner = 'HUMAN';
+                if(gameWon.mark != humanMark) this.gameInfo.playerWinner = 'AI';
             },
             emptySquares() {
                 let { board } = this.gameInfo;
@@ -178,29 +247,6 @@
                     return true;
                 }
                 return false;
-            },
-            clickedTile(tile) {
-                let tileId = Number(tile.target.id.slice(-1));
-                // Check if the value of board array's index based on id of the cell is a number.
-                // If it contains a type of number, then it means that it's already taken.
-                if(typeof this.gameInfo.board[tileId] == 'number') {
-                    let { humanMark, aiMark } = this.gameInfo;
-                    
-                    // let time = setInterval(() => this.gameInfo.time -= 1, 1000);
-                    
-                    // Get the id of cell that have been clicked && humanMark ('O')
-                    // setTimeout(() => clearInterval(decreaseTime), this.gameInfo.time*1000);
-                    // this.gameInfo.time = 15;
-                    // if(this.turn(tileId, humanMark) !== undefined) return 0;
-                    
-                    // Disable events for entire cells
-                    if(this.turn(tileId, humanMark) !== undefined) return;
-                    this.disableEvents();
-
-                    // checkTie function will return true if it's a tie, else false.
-                    // bestSpot function will return the first empty spot in array.
-                    setTimeout(() => (!this.checkTie()) ? this.turn(this.bestSpot(), aiMark) : "", 750);
-                }
             },
             turn(tileId, playerMark) {
                 let span = document.createElement('span');

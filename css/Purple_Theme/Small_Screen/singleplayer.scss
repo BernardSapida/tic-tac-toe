@@ -193,8 +193,9 @@
                     width: max-content;
                     border-spacing: 7px 4px;
 
-                    & tr.board {
+                    & > tbody tr.board {
                         display: block;
+
                         & td div {
                             position: relative;
                             display: grid;
@@ -287,35 +288,33 @@
                         }
                     }
 
-                    & .result-score {
-                        margin-top: 5px;
-                        display: grid;
-                        grid-template-columns: 1fr 1fr 1fr;
-                        place-items: center;
+                    & tfoot.result-score {
 
-                        & div {
-                            padding: 5px 0;
-                            width: 65px;
-                            border-radius: 3px;
-                            box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.25);
+                        & tr {
+                            display: block;
 
-                            &.player-score {
+                            & td.player-score {
                                 background: hsl(327, 98%, 62%);
                             }
 
-                            &.ties {
+                            & td.ties {
                                 background: hsl(44, 100%, 56%);
                             }
 
-                            &.bot-score {
+                            & td.bot-score {
                                 background: hsl(189, 90%, 66%);
                             }
 
-                            & p {
+                            & td {
+                                padding: 5px 0;
                                 font-size: 8px;
+                                height: 15px;
+                                width: 65px;
                                 text-align: center;
                                 font-weight: bolder;
                                 color: hsl(0, 0%, 100%);
+                                border-radius: 3px;
+                                box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.25);
                             }
                         }
                     }
@@ -323,14 +322,84 @@
             }
         }
 
-        & .section-singleplayer-modal {
+        & #section-singleplayer-modal {
+            height: 100%;
+            width: 100%;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            height: 100%;
-            width: 100%;
             backdrop-filter: blur(3px);
+
+            & div.container-winners-modal {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin: auto;
+                display: grid;
+                place-items: center;
+                height: 180px;
+                width: 250px;
+                background: hsl(231, 99%, 73%);
+                border-radius: 15px;
+
+                & #confetti {
+                    position: absolute;
+                }
+
+                & div.icon-star {
+                    position: absolute;
+                    top: -25px;
+                    font-size: 50px;
+                    color: hsl(44, 100%, 56%);
+                }
+
+                & div.modal-text {
+                    & p {
+                        font-size: 18px;
+                        text-align: center;
+                        line-height: 1.5;
+                        font-weight: bolder;
+                        font-family: 'Inter', Arial, Helvetica, sans-serif;
+                        color: hsl(0, 0%, 100%);
+    
+                        &.text-congratulation {
+                            font-size: 16px;
+                        }
+    
+                        &.text-result {
+                            font-size: 30px !important;
+                        }
+                    }
+                }
+
+                & div.container-btn {
+                    position: absolute;
+                    bottom: -25px;
+                    width: 90%;
+                    display: flex;
+                    justify-content: space-around;
+
+                    & button {
+                        height: 60px;
+                        width: 60px;
+                        background-image: radial-gradient(hsl(44, 100%, 56%), hsl(327, 98%, 62%));
+                        border: none;
+                        border-radius: 50%;
+
+                        & :is(.btn-leave, .btn-play-again) {
+                            color: white;
+                            line-height: 0;
+                            font-size: 30px;
+                        }
+
+                        & .btn-leave {
+                            transform: rotateZ(180deg)
+                        }
+                    }
+                }
+            }
         }
     }
 }

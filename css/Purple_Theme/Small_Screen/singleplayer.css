@@ -214,10 +214,10 @@
     width: max-content;
     border-spacing: 7px 4px;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board {
     display: block;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div {
     position: relative;
     display: -ms-grid;
     display: grid;
@@ -228,17 +228,17 @@
     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div.active {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div.active {
     background-color: #FFC11D !important;
     -webkit-transition: all 350ms ease-in;
     transition: all 350ms ease-in;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X {
     position: absolute;
     height: 65px;
     width: 65px;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X::after {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -248,20 +248,20 @@
     background: #fd3fa8;
     border-radius: 3px;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X::before {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X::before {
     -webkit-transform: translate(-50%, -50%) rotate(45deg);
             transform: translate(-50%, -50%) rotate(45deg);
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X::after {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-X::after {
     -webkit-transform: translate(-50%, -50%) rotate(-45deg);
             transform: translate(-50%, -50%) rotate(-45deg);
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O {
     position: absolute;
     height: 65px;
     width: 65px;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O::before {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -273,7 +273,7 @@
             box-shadow: 0px 0px 0px 13px #5adff6, 4px 4px 4px 13px rgba(0, 0, 0, 0.5), -4px -4px 4px 13px rgba(255, 255, 255, 0.5);
     z-index: 1;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O::after {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -283,64 +283,122 @@
     border-radius: 50%;
     background: linear-gradient(-45deg, transparent 40%, rgba(0, 0, 0, 0.5));
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O::after {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O::before, body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span#mark-O::after {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) #mark-X {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) #mark-X {
     -webkit-animation: displayMark 350ms forwards;
             animation: displayMark 350ms forwards;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) #mark-O {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) #mark-O {
     -webkit-animation: displayMark 350ms forwards;
             animation: displayMark 350ms forwards;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:nth-child(even) {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:nth-child(even) {
     background: #c4c6f8;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tr.board td div:nth-child(odd) {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board > tbody tr.board td div:nth-child(odd) {
     background: white;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board .result-score {
-    margin-top: 5px;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tfoot.result-score tr {
+    display: block;
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board .result-score div {
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tfoot.result-score tr td.player-score {
+    background: #fd3fa8;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tfoot.result-score tr td.ties {
+    background: #ffc31f;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tfoot.result-score tr td.bot-score {
+    background: #5adff6;
+  }
+  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board tfoot.result-score tr td {
     padding: 5px 0;
+    font-size: 8px;
+    height: 15px;
     width: 65px;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
     border-radius: 3px;
     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
   }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board .result-score div.player-score {
-    background: #fd3fa8;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board .result-score div.ties {
-    background: #ffc31f;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board .result-score div.bot-score {
-    background: #5adff6;
-  }
-  body main .section-app-purple-theme .display-router section.section-singleplayer .section-singleplayer-container table.container-board .result-score div p {
-    font-size: 8px;
-    text-align: center;
-    font-weight: bolder;
-    color: white;
-  }
-  body main .section-app-purple-theme .display-router .section-singleplayer-modal {
+  body main .section-app-purple-theme .display-router #section-singleplayer-modal {
+    height: 100%;
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    height: 100%;
-    width: 100%;
     -webkit-backdrop-filter: blur(3px);
             backdrop-filter: blur(3px);
+  }
+  body main .section-app-purple-theme .display-router #section-singleplayer-modal div.container-winners-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    margin: auto;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    height: 180px;
+    width: 250px;
+    background: #768afe;
+    border-radius: 15px;
+  }
+  body main .section-app-purple-theme .display-router #section-singleplayer-modal div.container-winners-modal #confetti {
+    position: absolute;
+  }
+  body main .section-app-purple-theme .display-router #section-singleplayer-modal div.container-winners-modal div.icon-star {
+    position: absolute;
+    top: -25px;
+    font-size: 50px;
+    color: #ffc31f;
+  }
+  body main .section-app-purple-theme .display-router #section-singleplayer-modal div.container-winners-modal div.modal-text p {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: bolder;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    color: white;
+  }
+  body main .section-app-purple-theme .display-router #section-singleplayer-modal div.container-winners-modal div.modal-text p.text-congratulation {
+    font-size: 16px;
+  }
+  body main .section-app-purple-theme .display-router #section-singleplayer-modal div.container-winners-modal div.modal-text p.text-result {
+    font-size: 30px !important;
+  }
+  body main .section-app-purple-theme .display-router #section-singleplayer-modal div.container-winners-modal div.container-btn {
+    position: absolute;
+    bottom: -25px;
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  body main .section-app-purple-theme .display-router #section-singleplayer-modal div.container-winners-modal div.container-btn button {
+    height: 60px;
+    width: 60px;
+    background-image: radial-gradient(#ffc31f, #fd3fa8);
+    border: none;
+    border-radius: 50%;
+  }
+  body main .section-app-purple-theme .display-router #section-singleplayer-modal div.container-winners-modal div.container-btn button :is(.btn-leave, .btn-play-again) {
+    color: white;
+    line-height: 0;
+    font-size: 30px;
+  }
+  body main .section-app-purple-theme .display-router #section-singleplayer-modal div.container-winners-modal div.container-btn button .btn-leave {
+    -webkit-transform: rotateZ(180deg);
+            transform: rotateZ(180deg);
   }
 }
 
