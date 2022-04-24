@@ -20,7 +20,7 @@ const routes = [
     component: NewGame
   },
   {
-    path: '/singleplayer',
+    path: '/singleplayer/difficulty=:difficulty&human-mark=:humanMark&ai-mark=:aiMark',
     name: 'singleplayer',
     component: SinglePlayer
   },

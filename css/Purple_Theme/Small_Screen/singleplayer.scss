@@ -129,7 +129,7 @@
                         }
                     }
 
-                    & .profile-you, & .profile-bot {
+                    & .profile-human-x, & .profile-bot-o {
                         position: relative;
                         height: max-content;
                         text-align: center;
@@ -166,7 +166,44 @@
                         }
                     }
 
-                    & .profile-you div {
+                    & .profile-human-x, & .profile-bot-o {
+                        position: relative;
+                        height: max-content;
+                        text-align: center;
+                        font-size: 12px;
+                        font-weight: bolder;
+                        color: hsl(0, 0%, 100%);
+                        align-self: flex-end;
+
+                        & div {
+                            margin: 5px 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 70px;
+                            width: 70px;
+                            border-radius: 50%;
+                            
+                            & div {
+                                display: grid;
+                                place-items: center;
+                                background: hsl(0, 0%, 100%);
+                                height: 60px;
+                                width: 60px;
+                                border-radius: 50%;
+                                line-height: 0;
+                            }
+                        }
+
+                        & p:last-child {
+                            position: absolute;
+                            top: 110%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+
+                    & .profile-human-x div {
                         background: hsl(327, 98%, 62%);
                         box-shadow: 0 0 10px hsla(327, 98%, 62%, 0.7);
 
@@ -176,13 +213,107 @@
                         }
                     }
 
-                    & .profile-bot div {
+                    & .profile-bot-o div {
                         background: hsl(189, 90%, 66%);
                         box-shadow: 0 0 10px hsla(189, 90%, 66%, 0.7);
-                        
+
                         & div {
                             font-size: 30px;
                             color: hsl(189, 90%, 66%);
+                        }
+                    }
+
+                    & .profile-human-o, & .profile-bot-x {
+                        position: relative;
+                        height: max-content;
+                        text-align: center;
+                        font-size: 12px;
+                        font-weight: bolder;
+                        color: hsl(0, 0%, 100%);
+                        align-self: flex-end;
+
+                        & div {
+                            margin: 5px 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 70px;
+                            width: 70px;
+                            border-radius: 50%;
+                            
+                            & div {
+                                display: grid;
+                                place-items: center;
+                                background: hsl(0, 0%, 100%);
+                                height: 60px;
+                                width: 60px;
+                                border-radius: 50%;
+                                line-height: 0;
+                            }
+                        }
+
+                        & p:last-child {
+                            position: absolute;
+                            top: 110%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+
+                    & .profile-human-o, & .profile-bot-x {
+                        position: relative;
+                        height: max-content;
+                        text-align: center;
+                        font-size: 12px;
+                        font-weight: bolder;
+                        color: hsl(0, 0%, 100%);
+                        align-self: flex-end;
+
+                        & div {
+                            margin: 5px 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 70px;
+                            width: 70px;
+                            border-radius: 50%;
+                            
+                            & div {
+                                display: grid;
+                                place-items: center;
+                                background: hsl(0, 0%, 100%);
+                                height: 60px;
+                                width: 60px;
+                                border-radius: 50%;
+                                line-height: 0;
+                            }
+                        }
+
+                        & p:last-child {
+                            position: absolute;
+                            top: 110%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+
+                    & .profile-human-o div {
+                        background: hsl(189, 90%, 66%);
+                        box-shadow: 0 0 10px hsla(189, 90%, 66%, 0.7);
+
+                        & div {
+                            font-size: 40px;
+                            color: hsl(189, 90%, 66%);
+                        }
+                    }
+
+                    & .profile-bot-x div {
+                        background: hsl(327, 98%, 62%);
+                        box-shadow: 0 0 10px hsla(327, 98%, 62%, 0.7);
+                        
+                        & div {
+                            font-size: 30px;
+                            color: hsl(327, 98%, 62%);
                         }
                     }
                 }  
@@ -211,7 +342,7 @@
                             }
 
                             &:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) span {                                
-                                &#mark-X {
+                                &.mark-X {
                                     position: absolute;
                                     height: 65px;
                                     width: 65px;
@@ -236,7 +367,7 @@
                                     }
                                 }
 
-                                &#mark-O {
+                                &.mark-O {
                                     position: absolute;
                                     height: 65px;
                                     width: 65px;
@@ -270,11 +401,11 @@
                                 }
                             }
 
-                            &:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) #mark-X {
+                            &:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) .mark-X {
                                 animation: displayMark 350ms forwards;
                             }
 
-                            &:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) #mark-O {
+                            &:is(#tile0, #tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8) .mark-O {
                                 animation: displayMark 350ms forwards;
                             }
 
@@ -329,7 +460,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(3px);
+            animation: modal-result 1250ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
 
             & div.container-winners-modal {
                 position: absolute;
@@ -353,6 +486,24 @@
                     top: -25px;
                     font-size: 50px;
                     color: hsl(44, 100%, 56%);
+                    animation: star 1000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+                }
+
+                & div.icon-star-tie {
+                    position: absolute;
+                    top: -25px;
+                    font-size: 50px;
+                    animation: star 1000ms cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+                    
+                    & .star-half {
+                        position: absolute;
+                        color: hsl(44, 100%, 56%);
+                        z-index: 1;
+                    }
+
+                    & .star-full {
+                        color: hsl(0, 0%, 95%);
+                    }
                 }
 
                 & div.modal-text {
@@ -427,5 +578,33 @@
     100% {
         display: block;
         transform: scaleY(1);
+    }
+}
+
+@keyframes modal-result {
+    0% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes star {
+    0% {
+        position: absolute;
+        top: -75px;
+    }
+    50% {
+        position: absolute;
+        transform: scaleY(.7);
+        top: -25px;
+    }
+    100% {
+        position: absolute;
+        top: -75px;
     }
 }

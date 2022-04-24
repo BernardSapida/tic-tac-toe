@@ -9,7 +9,7 @@
     <section class="section-singleplayer">
         <div class="section-singleplayer-container">
             <div class="profile">
-                <div class="profile-you">
+                <div id='human-player'>
                     <p>YOU</p>
                     <div>
                         <div><fa icon="user-astronaut"/></div>
@@ -26,7 +26,7 @@
                         <p>TIME</p>
                     </div>
                 </div>
-                <div class="profile-bot">
+                <div id='ai-player'>
                     <p>BOT</p>
                     <div>
                         <div><fa icon="robot"/></div>
@@ -37,44 +37,48 @@
             <table class="container-board">
                 <tbody>
                     <tr class="board">
-                        <td><div id="tile0" class="tiles"><span id="mark-X"></span></div></td>
-                        <td><div id="tile1" class="tiles"><span id="mark-X"></span></div></td>
-                        <td><div id="tile2" class="tiles"><span id="mark-X"></span></div></td>
+                        <td><div id="tile0" class="tiles"></div></td>
+                        <td><div id="tile1" class="tiles"></div></td>
+                        <td><div id="tile2" class="tiles"></div></td>
                     </tr>
                     <tr class="board">
-                        <td><div id="tile3" class="tiles"><span id="mark-X"></span></div></td>
-                        <td><div id="tile4" class="tiles"><span id="mark-X"></span></div></td>
-                        <td><div id="tile5" class="tiles"><span id="mark-X"></span></div></td>
+                        <td><div id="tile3" class="tiles"></div></td>
+                        <td><div id="tile4" class="tiles"></div></td>
+                        <td><div id="tile5" class="tiles"></div></td>
                     </tr>
                     <tr class="board">
-                        <td><div id="tile6" class="tiles"><span id="mark-X"></span></div></td>
-                        <td><div id="tile7" class="tiles"><span id="mark-X"></span></div></td>
-                        <td><div id="tile8" class="tiles"><span id="mark-X"></span></div></td>
+                        <td><div id="tile6" class="tiles"></div></td>
+                        <td><div id="tile7" class="tiles"></div></td>
+                        <td><div id="tile8" class="tiles"></div></td>
                     </tr>
                 </tbody>
                 <tfoot class="result-score">
                     <tr>
                         <td class="player-score">
                             <p>YOUR SCORE</p>
-                            <p>3</p>
+                            <p>{{ gameInfo.humanScore }}</p>
                         </td>
                         <td class="ties">
                             <p>TIES</p>
-                            <p>1</p>
+                            <p>{{ gameInfo.tieScore }}</p>
                         </td>
                         <td class="bot-score">
                             <p>BOT SCORE</p>
-                            <p>6</p>
+                            <p>{{ gameInfo.aiScore }}</p>
                         </td>
                     </tr>
                 </tfoot>
             </table>
         </div>
     </section>
-    <section id="section-singleplayer-modal">
+    <section id="section-singleplayer-modal" v-if="gameInfo.playerWinner">
         <div class="container-winners-modal">
             <canvas id="confetti"></canvas>
-            <div class="icon-star"><fa icon="star"/></div>
+            <div class="icon-star" v-if="gameInfo.playerWinner == 'HUMAN'"><fa icon="star"/></div>
+            <div class="icon-star-tie" v-if="gameInfo.playerWinner == 'TIE'">
+                <div class="star-half"><fa class='test' icon="star-half"/></div>
+                <div class="star-full"><fa class='test' icon="star"/></div>
+            </div>
             <div class="modal-text">
                 <p class="text-congratulation" v-if="gameInfo.playerWinner == 'HUMAN'">CONGRATULATION</p>
                 <p class="text-result" v-if="gameInfo.playerWinner == 'HUMAN'">YOU WON!</p>
@@ -96,18 +100,25 @@
 
     export default {
         name: 'SinglePlayer',
+        props: {
+            humanMark: String
+        },
         data() {
             return {
                 gameInfo: {
-                    humanMark: 'X',
-                    aiMark: 'O',
+                    difficulty: '',
+                    humanMark: '',
+                    aiMark: '',
+                    humanScore: 0,
+                    aiScore: 0,
+                    tieScore: 0,
                     numberOfMark: 0,
                     playerTurn: '',
-                    playerWinner: null,
+                    playerWinner: '',
                     board: [0, 1, 2, 3, 4, 5, 6, 7, 8],
                     markRecord: [],
                     time: 15,
-                    runTime: setInterval(() => this.gameInfo.time -= 1, 1000),
+                    runTime: null,
                     boardRecord: [[]],
                     winCombinations: [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[6, 4, 2]],
                 }
@@ -117,31 +128,77 @@
             let tiles = document.querySelectorAll('.tiles');
             // Disable events for entire tiles
             for(let i = 0; i < tiles.length; i++) tiles[i].addEventListener('click', this.clickedTile, false);
-    
-            this.gameInfo.runTime;
-            this.confetti();
+            if(this.$route.params.humanMark != 'X') {
+                this.gameInfo.playerTurn == 'AI';
+                this.gameInfo.humanMark = 'O';
+                this.gameInfo.aiMark = 'X';
+                this.turn(Math.ceil(Math.random()*9), this.gameInfo.aiMark);
+                document.getElementById('human-player').classList.add('profile-human-o');
+                document.getElementById('ai-player').classList.add('profile-human-x');
+            } else {
+                this.gameInfo.playerTurn = 'HUMAN';
+                this.gameInfo.humanMark = 'X';
+                this.gameInfo.aiMark = 'O';
+                document.getElementById('human-player').classList.add('profile-human-x');
+                document.getElementById('ai-player').classList.add('profile-human-o');
+            }
+
+            this.gameInfo.difficulty = this.$route.params.difficulty;
+            this.gameInfo.runTime = setInterval(() => this.gameInfo.time -= 1, 1000);
+            // if(this.gameInfo.playerWinner) this.confetti();
         },
         methods: {
             goBack() {
                 this.$router.go(-2);
             },
             goHome() {
+                clearInterval(this.gameInfo.runTime);
+                this.gameInfo.playerTurn = 'HUMAN';
+                this.gameInfo.playerWinner = '';
+                this.gameInfo.humanScore = 0;
+                this.gameInfo.aiScore = 0;
+                this.gameInfo.tieScore = 0;
+                this.gameInfo.numberOfMark = 0;
+                this.gameInfo.markRecord = [];
+                this.gameInfo.time = 15;
+                this.gameInfo.boardRecord = [[]];
                 this.$router.push({ name: 'home' });
             },
             playAgain() {
                 let tiles = document.querySelectorAll('.tiles');
+                let board = this.gameInfo.board.reduce((total, currentValue, currentIndex) => (typeof currentValue !== 'number') ? total.concat(currentIndex) : total, []);
+
+                for(let index of board) {
+                    document.getElementById(`tile${index}`).removeChild(document.getElementById(`tile${index}`).lastChild);
+                    document.getElementById(`tile${index}`).classList.remove('active');
+                }
 
                 this.gameInfo.board = Array.from(Array(9).keys());
-                for(let index = 0; index < 9; index++) {
-                    document.getElementById(`tile${index}`).removeChild(document.getElementById(`tile${index}`).lastChild);
+                for(let index = 0; index < this.gameInfo.board.length; index++) {
                     tiles[index].addEventListener('click', this.clickedTile, false);
                 }
-                document.getElementById('section-singleplayer-modal').remove();
 
-                this.gameInfo.playerTurn = 'HUMAN';
+                this.gameInfo.playerTurn = (this.gameInfo.aiMark == 'X') ? 'HUMAN' : 'AI';
+                [this.gameInfo.humanMark, this.gameInfo.aiMark] = [this.gameInfo.aiMark, this.gameInfo.humanMark];  
+                this.gameInfo.playerWinner = '';
                 this.gameInfo.numberOfMark = 0;
                 this.gameInfo.markRecord = [];
                 this.gameInfo.time = 15;
+                this.gameInfo.boardRecord = [[]];
+
+                document.getElementById('human-player').removeAttribute('class');
+                document.getElementById('ai-player').removeAttribute('class');
+                
+                if(this.gameInfo.aiMark == 'X') {
+                    this.gameInfo.playerTurn == 'AI';
+                    this.gameInfo.humanMark = 'O';
+                    this.turn(4, this.gameInfo.aiMark);
+                    document.getElementById('human-player').classList.add('profile-human-o');
+                    document.getElementById('ai-player').classList.add('profile-human-x');
+                } else {
+                    document.getElementById('human-player').classList.add('profile-human-x');
+                    document.getElementById('ai-player').classList.add('profile-human-o');
+                }
             },
             confetti() {
                 let confettiSettings = { target: 'confetti', size: 1.5, rotate: true, respawn: false, clock: 10, colors: [[255, 0, 0], [174, 0, 255], [0, 255, 89], [0, 162, 255]] };
@@ -185,33 +242,27 @@
                 // If it contains a type of number, then it means that it's already taken.
                 if(typeof this.gameInfo.board[tileId] == 'number') {
                     let { humanMark, aiMark } = this.gameInfo;
-                    
-                    // let time = setInterval(() => this.gameInfo.time -= 1, 1000);
-                    
-                    // Get the id of cell that have been clicked && humanMark ('O')
-                    // setTimeout(() => clearInterval(decreaseTime), this.gameInfo.time*1000);
-                    // this.gameInfo.time = 15;
-                    // if(this.turn(tileId, humanMark) !== undefined) return 0;
-                    
-                    // Disable events for entire cells
-                    if(this.turn(tileId, humanMark) !== undefined) return;
-                    this.disableEvents();
-                    clearInterval(this.gameInfo.runTime);
+
                     // checkTie function will return true if it's a tie, else false.
                     // bestSpot function will return the first empty spot in array.
-                    // TIME = setInterval(() => this.gameInfo.time -= 1, 1000);
-
                     this.gameInfo.runTime = setInterval(() => this.gameInfo.time -= 1, 1000);
-                    setTimeout(() => {
-                        if(!this.checkTie()) {
-                            this.turn(this.bestSpot(), aiMark);
-                        }
-                    }, Math.ceil((Math.random()*3)+1)*1000);
+                    setTimeout(() => (!this.checkTie()) ? this.turn(this.bestSpot(), aiMark) : "", Math.ceil((Math.random()*3)+1)*1000); 
+                    clearInterval(this.gameInfo.runTime);
+                    
+                    // Disable events for entire cells
+                    this.gameInfo.runTime = setInterval(() => this.gameInfo.time -= 1, 1000);
+                    if(!this.checkTie()) {
+                        if(this.turn(tileId, humanMark) !== undefined) return;
+                    }
+                    clearInterval(this.gameInfo.runTime);
+                    this.disableEvents();
                 }
             },
             gameOver(gameWon) {
                 let cells = document.querySelectorAll('.cells');
                 let { winCombinations, humanMark } = this.gameInfo;
+
+                clearInterval(this.gameInfo.runTime);
 
                 // Obtaining 3 index of winning combinations and loop based on length (which is 3)
                 for(let index of winCombinations[gameWon.index]) {
@@ -224,36 +275,47 @@
                     cells[i].removeEventListener('click', this.clickedTile, false);
                 }
 
-                if(gameWon.mark == humanMark) this.gameInfo.playerWinner = 'HUMAN';
-                if(gameWon.mark != humanMark) this.gameInfo.playerWinner = 'AI';
+                if(gameWon.mark == humanMark) {
+                    this.gameInfo.playerWinner = 'HUMAN';
+                    this.gameInfo.humanScore++;
+                }
+                if(gameWon.mark != humanMark) {
+                    this.gameInfo.playerWinner = 'AI';
+                    this.gameInfo.aiScore++;
+                }
             },
             emptySquares() {
                 let { board } = this.gameInfo;
-
+                let availableTiles = board.filter(e => typeof e == 'number');
                 // Filter array that will return the empty spot of the board.
                 // Empty spot if it contains numbers
                 // Filled spot if it contains either 'X' or 'O'
-                return board.filter(e => typeof e == 'number');
+                return availableTiles;
             },
             checkTie() {
                 let cells = document.querySelectorAll('.cells');
+
+                clearInterval(this.gameInfo.runTime);
 
                 if(this.emptySquares().length == 0) {
                     for(let i = 0; i < cells.length; i++) {
                         cells[i].style.backgroundColor = 'green';
                         cells[i].removeEventListener('click', this.clickedTile, false);
                     }
-                    // declareWinner('Tie Game!');
+                    this.gameInfo.tieScore++;
                     return true;
                 }
                 return false;
             },
+            declareWinner(winnerPlayer) {
+                this.gameInfo.playerWinner = winnerPlayer;
+            },
             turn(tileId, playerMark) {
                 let span = document.createElement('span');
                 let tile = document.getElementById(`tile${tileId}`);
-                span.setAttribute('id', `mark-${playerMark}`);
+                span.setAttribute('class', `mark-${playerMark}`);
 
-                this.gameInfo.playerTurn = (playerMark == 'X' ? 'AI' : 'HUMAN');
+                this.gameInfo.playerTurn = (playerMark == this.gameInfo.humanMark ? 'AI' : 'HUMAN');
                 
                 let { board } = this.gameInfo;
                 // Putting playerMark on array, the position is based on ID
@@ -267,39 +329,44 @@
                 let gameWon = this.checkWin(board, playerMark);
                 if(gameWon) {
                     this.gameOver(gameWon);
+                    (gameWon.mark == this.gameInfo.humanMark) ? this.declareWinner('HUMAN'): this.declareWinner('AI');
                     return gameWon.index;
                 }
+                
+                if(this.emptySquares().length == 0) this.declareWinner('TIE');
 
                 this.gameInfo.boardRecord.push(JSON.parse(JSON.stringify(board)));
                 this.gameInfo.markRecord.push(tileId);
                 this.gameInfo.time = 15;
 
-                if(playerMark != 'X') this.enableEvents();
+                if(playerMark != this.gameInfo.humanMark) this.enableEvents();
             },
             bestSpot() {
-                let { board, aiMark } = this.gameInfo;
+                let { board, aiMark, difficulty } = this.gameInfo;
                 // getting the index which is property of returned object of minimax function.
                 // return this.minimax(board, aiMark).index;
                     // return this.emptySquares()[0];
                 try {
                     // return this.emptySquares()[0];
-                    return this.minimax(board, aiMark, false).index;
+                    if(difficulty == 'easy') return this.emptySquares()[Math.ceil(Math.random()*this.emptySquares().length)];
+                    if(difficulty == 'medium') return this.emptySquares()[Math.ceil(Math.random()*this.emptySquares().length)];
+                    if(difficulty == 'difficult') return this.minimax(board, aiMark, false).index;
                 } catch (error) {
                     console.log(error);
                 }
             },
             checkWin(thisBoard) {
-                let xPlays = thisBoard.reduce((total, currentValue, currentIndex) => (currentValue === 'X') ? total.concat(currentIndex) : total, []);
-                let oPlays = thisBoard.reduce((total, currentValue, currentIndex) => (currentValue === 'O') ? total.concat(currentIndex) : total, []);
+                let humanPlays = thisBoard.reduce((total, currentValue, currentIndex) => (currentValue === this.gameInfo.humanMark) ? total.concat(currentIndex) : total, []);
+                let aiPlays = thisBoard.reduce((total, currentValue, currentIndex) => (currentValue === this.gameInfo.aiMark) ? total.concat(currentIndex) : total, []);
                 let score = null;
                 let { winCombinations } = this.gameInfo;
 
                 for(let [index, array] of winCombinations.entries()) {
-                    if(array.every(elem => xPlays.indexOf(elem) > -1)) {
-                        return {index: index, mark: 'X', scores: -10};
+                    if(array.every(elem => humanPlays.indexOf(elem) > -1)) {
+                        return {index: index, mark: this.gameInfo.humanMark, scores: -10};
                     }
-                    if(array.every(elem => oPlays.indexOf(elem) > -1)) {
-                        return  {index: index, mark: 'O', scores: 10};
+                    if(array.every(elem => aiPlays.indexOf(elem) > -1)) {
+                        return  {index: index, mark: this.gameInfo.aiMark, scores: 10};
                     }
                 }
     
